@@ -43,12 +43,15 @@ def new_game():
 
         if first_roll_score + second_roll_score == 10:
             print('Spare!!!')
-            turns.append(first_roll_score + second_roll_score + bonus_score)
             if counter == 0:
                 counter = 1
             if len(turns) == 9:
+                print('BINGO')
+                print(len(turns))
+                print("Tirada 1 {} Tirada 2 {} Bonus {}".format(first_roll_score, second_roll_score, bonus_score))
+                turns.append(first_roll_score + second_roll_score + bonus_score)
                 turns.append(2 * random_score(11))
-                continue
+                break
 
         turns.append(first_roll_score + second_roll_score + bonus_score)
         print(len(turns))
